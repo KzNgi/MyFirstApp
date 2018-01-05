@@ -1,0 +1,27 @@
+<%= form_with(model: index, local: true) do |form| %>
+  <% if index.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(index.errors.count, "error") %> prohibited this index from being saved:</h2>
+
+      <ul>
+      <% index.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :theme %>
+    <%= form.text_field :theme, id: :index_theme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_field :detail, id: :index_detail %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
